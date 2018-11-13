@@ -1,31 +1,26 @@
-# Exercise 2.3
+# Exercise 2.5
 
 ## Document Information
 
-- Exercises Section 2.1.2
-- Exercise 2.3
+- Exercises Section 2.1.3
+- Exercise 2.5
 - C++ Primer, 5th Edition
 - @author Russell Folk
 
 ## Question
 
-> What will the following code produce?
-> `unsigned u = 10, u2 = 42;`
-> `std::cout << u2 - u << std::endl;`
-> `std::cout << u - u2 << std::endl;`
+> Determine the type of each of the following literals. Explain the differences among the literals in each of the four
+> examples:
 >
-> `int i = 10, i2 = 42;`
-> `std::cout << i2 - i << std::endl;`
-> `std::cout << i - i2 << std::endl;`
->
-> `std::cout << i - u << std::endl;`
-> `std::cout << u - i << std::endl;`
+> (a) 'a', L'a', "a", L"a"
+> (b) 10, 10u, 10L, 012, 0xC
+> (c) 3.14, 3.14f, 3.14L
+> (d) 10, 10u, 10., 10e-2
 
 ## Answer
 
-* `u2 - u = 32`
-* `u - u2 = 4294967264` for 32-bit integers
-* `i2 - i = 32`
-* `i - i2 = -32`
-* `i - u = 0`
-* `u - i = 0`
+a. `'a', L'a', "a", L"a"`
+   * 'a': character literal of type `char`
+   * L'a': wide character literal of type `wchar_t`
+   * "a": string literal, represented by `char[2]`, including `'\0'`
+   * L"a": wide character string literal, represented by `wchar_t[2]`, including `'\0'`
